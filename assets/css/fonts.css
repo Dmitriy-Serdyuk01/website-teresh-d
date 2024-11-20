@@ -1,0 +1,31 @@
+/* @font-face {
+    font-family: "Turnpike";
+    src: url("../../assets/fonts/Turnpike.woff2"), url("../../assets/fonts/Turnpike.ttf"),
+      url("../../assets/fonts/Turnpike.otf");
+    font-weight: 400;
+    font-display: swap;
+} */
+
+@font-face {
+    font-family: "EurostileExt-Med";
+    src: url("../../assets/fonts/EurostileExt-Med.woff"), url("../../assets/fonts/EurostileExt-Med.ttf"),
+      url("../../assets/fonts/EurostileExt-Med.otf");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../../assets/fonts/Montserrat-Regular.woff"), url("../../assets/fonts/Montserrat-Regular.ttf"),
+    url("../../assets/fonts/Montserrat-Regular.otf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HeliosExtBlackC";
+  src: url("../../assets/fonts/HeliosExtBlackC.woff"), url("../../assets/fonts/HeliosExtBlackC.ttf"),
+    url("../../assets/fonts/HeliosExtBlackC.otf");
+  font-weight: 400;
+  font-display: swap;
+}
