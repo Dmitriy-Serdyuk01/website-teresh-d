@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions for Modifying the Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Instructions for Modifying the Template</h1>
+    
+    <h2>File Structure Overview</h2>
+    <p>- <code>index.html</code>: The main HTML file for the homepage.<br>
+       - <code>style.css</code>: Contains custom styles used across the website.<br>
+       - <code>normalize.css</code>: Resets and normalizes default browser styles, also contains custom settings like colors, fonts, and background image for the body.<br>
+       - <code>main.js</code>: JavaScript functions used for interactivity.<br>
+       - <code>images/logo/</code>: Contains the website's logo.<br>
+       - <code>images/icon/</code>: Contains various icons used on the website.<br>
+       - <code>images/img/</code>: Contains general images used throughout the site.</p>
+
+    <h2>Modifying Text Content</h2>
+    <p>Open <code>index.html</code> in any code editor. Locate the sections using <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>,  and other text elements. Modify the text inside these tags to customize the content.</p>
+
+    <h2>Changing Images</h2>
+    <p>To update images on the site, follow these steps:</p>
+    <ul>
+        <li><strong>Logo</strong>: Replace the logo in the <code>images/logo/</code> folder. Ensure that the new logo has the same name as the original file, or update the image path in the <code>index.html</code> or <code>style.css</code> file where the logo is referenced.</li>
+        <li><strong>Icons</strong>: Update icons in the <code>images/icon/</code> folder. Ensure the new icons follow the same naming convention or adjust the paths in the HTML or CSS files if necessary.</li>
+        <li><strong>Other Images</strong>: General images for the website are stored in <code>images/img/</code>. Replace them as needed, ensuring the file names match, or update the paths where these images are referenced in the HTML files.</li>
+    </ul>
+
+    <h2>Editing Styles</h2>
+    <p>To change the appearance of elements (colors, fonts, background image, etc.), open <code>normalize.css</code> and <code>style.css</code>. In <code>normalize.css</code>, you will find default styles like <code>body</code> with the background image path, fonts, and colors. Modify these values to suit your design. In <code>style.css</code>, you can further customize specific page elements, adding or overriding styles.</p>
+
+    <h2>Changing Background Image</h2>
+    <p>To update the background image, open <code>normalize.css</code>, locate the <code>body</code> selector, and change the <code>background-image</code> path to the new image you want to use.</p>
+
+    <h2>JavaScript Customization</h2>
+    <p>If you need to change interactive features, edit the corresponding functions in <code>main.js</code>. Make sure to test changes in multiple browsers.</p>
+
+</body>
+</html>

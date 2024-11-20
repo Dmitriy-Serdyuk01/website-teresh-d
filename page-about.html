@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal assistance</title>
+
+
+    <!-- Bootstrap 5 Css -->
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- Drop the styles -->
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <!-- Connect fonts -->
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <!-- The main style file -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- Modal window "Enrollment for Consultation". Start-->
+        <div class="modal" id="consultationModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Sign up for a consultation</h2>
+                <p>Please fill out the form below to book a consultation</p>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name: <span class="required-modal">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telephone: <span class="required-modal">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">The scope of the question:</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">Choose which consultation you are interested in</option>
+                            <option value="criminallaw">Criminal law</option>
+                            <option value="administrativelaw">Administrative law</option>
+                            <option value="autolawyer">Automotive lawyer (Road accident lawyer)</option>
+                            <option value="medicallaw">Medical law</option>
+                            <option value="compensation">Damage compensation</option>
+                            <option value="other">Other...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback">Brief content of the question:</label>
+                        <textarea id="feedback" name="feedback" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send</button>
+                </form>
+            </div>
+        </div>
+        <!-- Modal window "Enrollment for Consultation". End-->
+
+
+        <!-- Modal window for reviews. Start -->
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Leave a review</h2>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Name: <span class="required-modal">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telephone: <span class="required-modal">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rating">Rating:</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">Select a grade</option>
+                            <option value="super">Super</option>
+                            <option value="good">Normally, at your own expense</option>
+                            <option value="bad">Badly</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback">The text of the review: <span class="required-modal">*</span></label>
+                        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Leave a review</button>
+                </form>
+            </div>
+        </div>
+        <!-- Modal window for reviews. End -->
+
+        <!-- =====================
+        --- HEADER. Start ---
+        ===================== -->
+        <header class="header-style">
+            <div class="container">
+                <div class="col-12">
+                    <div class="site-row">
+                        <a href="./index.html" class="header-logo">
+                            <img src="./assets/images/logo/logo.svg" alt="logo">
+                        </a>
+                        <nav class="header_menu">
+                            <ul class="nav-menu">
+                                <li><a href="./page-about.html">About me</a></li>
+                                <li><a href="./page-services.html">Services</a></li>
+                                <li><a href="./page-blog.html">News and cases</a></li>
+                                <li><a href="./page-contacts.html">Contacts</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header_phone">
+                            <a href="tel:+380661111111">
+                                <img src="./assets/images/icon/icon_phone.svg" alt="phone">
+                            </a>
+                        </div>
+                        <div class="burger-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- =====================
+        --- HEADER. End ---
+        ===================== -->
+
+
+
+        <main class="main">
+
+            <section class="section-banner">
+                <div class="container">
+                    <div class="banner_wraper">
+                        <div class="banner_background">
+                            <img src="./assets/images/img/bg-breadcrumbs-3.2.webp" alt="photo bg">
+                        </div>
+                        <h1 class="banner_title">About me</h1>
+                        <div class="banner_image">
+                            <img src="./assets/images/img/my-photo-1.png" alt="photo">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- =====================
+            --- About Page. Block 1 "About me". Start ---
+            ===================== -->
+            <section class="section-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="section-about-content-left">
+                                <div class="about-content-txt">
+                                    <p>
+                                        "Law is the art of justice, and my task is to help you find it in any situation." © Volodymyr V
+                                    </p>
+                                </div>
+                                <div class="about-content-signature-img">
+                                    <img src="./assets/images/img/signature.png" alt="img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-12">
+                            <div class="section-about-content-right">
+                                <div class="about-content-descr">
+                                    <p>
+                                        Greetings, my name is Volodymyr, I am a lawyer with many years of experience in various fields of law. My main goal is to provide you with high-quality legal services and help you achieve justice.
+                                        <br><br>
+                                        In my practice, I pay special attention to each case and each client. I carefully study all the details to offer the most effective solution to your problem. My approach is based on in-depth knowledge of the law and the desire to maximize the protection of the client's interests.
+                                        <br><br>
+                                        In my work, I adhere to the principles of confidentiality, professionalism and an individual approach. I constantly monitor changes in legislation to provide you with relevant and effective advice.
+                                        <br><br>
+                                        By contacting me, you can be sure of reliability and competence. I strive to create a trusting and comfortable atmosphere so that you feel confident and protected at every stage of our cooperation.
+                                        <br><br>
+                                        Choose me as your attorney and experience my attention to detail.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>         
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-img-bottom">
+                <img src="./assets/images/img/event-img-2.webp" alt="">
+            </section>
+            <!-- =====================
+            --- About Page. Block 1 "About me". End ---
+            ===================== -->
+
+
+            <!-- =====================
+            --- About Page. Block 2. "How to register". Start ---
+            ===================== -->
+            <section class="section-signup">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-12">
+                            <!-- The content of the left column -->
+                            <div class="signup-content-wrapper">
+                                <div class="signup-content-wrapper-content">
+                                    <div class="signup-content-title">
+                                        <h2>How to sign up?</h2>
+                                    </div>
+                                    <div class="signup-content-descr">
+                                        <p>
+                                            Facing legal difficulties or need professional advice? If you are looking for a reliable lawyer to help you protect your rights and interests, contact me right now. I understand how important your time is, so I offer convenient methods of communication:
+                                            <br><br>
+                                            Call me or use the contact form by clicking the button "Make an appointment for a consultation"
+                                        </p>
+                                    </div>
+                                    <div class="signup-content-phone">
+                                        <a href="tel:+380661111111">+38 (066) 111-11-11</a>
+                                    </div>
+                                </div>
+                                <div class="hero-home_btn_wrapper">
+                                    <a href="#" class="hero-home_btn_link open-modal">
+                                        <div class="hero-home_btn_text">
+                                            Sign up for a consultation
+                                        </div>
+                                        <img src="./assets/images/img/button-outline.svg" alt="button" class="hero-home_btn_img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <!-- The content of the right column -->
+                            <div class="signup-img">
+                                <img src="./assets/images/img/about-img.webp" alt="about-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- =====================
+            --- About Page. Block 2. "How to register". End ---
+            ===================== -->
+
+
+        </main>
+
+
+
+
+
+        <!-- ===========================
+        --- About Page. *** FOOTER *** Start ---
+        ================================ -->
+        <footer class="section-footer">
+            <div class="container">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="footer-content-wrapper">
+                            <div class="footer-logo-wrapper">
+                                <a href="#" class="footer-logo-link">
+                                    <img src="./assets/images/logo/logo.svg" alt="logo">
+                                </a>
+                                <p class="footer-txt">
+                                    We invite you to a free consultation with a lawyer if you or your company are facing legal challenges. Contact us today to receive professional assistance.
+                                </p>
+                                
+                            </div>
+
+                            <div class="footer-menu-wrapper">
+                                <p class="footer-page-name">Quick Links</p>
+
+                                <nav class="footer-menu">
+                                    <ul class="nav-menu">
+                                        <li><a href="./page-about.html">About me</a></li>
+                                        <li><a href="./page-services.html">Services</a></li>
+                                        <li><a href="./page-blog.html">News and cases</a></li>
+                                        <li><a href="./page-contacts.html">Contacts</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            
+
+                            <div class="footer-contacts-wrapper">
+                                <p class="footer-contacts-name">Contact Info</p>
+
+                                <p class="footer-contact-adress">
+                                    LLC "Law Firm", 22 Khreshchatyk St, Kyiv, 01001, Ukraine.
+                                </p>
+                                <a class="footer-mail-adr" href="mailto:mail@example.com">mail@example.com</a>
+                                <a class="footer-phone-number" href="tel:+380661111111">+38(066)111-11-11</a>
+
+                                <div class="footer-schedule">
+                                    <p class="footer-schedule-title">Working Hours:</p>
+                                    <p>Mon - Thu: 9:30 AM - 6:00 PM</p>
+                                    <p>Fri: 9:30 AM - 5:00 PM</p>
+                                    <p>Saturday: 10:00 AM - 2:00 PM</p>
+                                    <p>Sunday: Closed</p>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+                        <div class="footer-policy-content">
+                            <p class="footer-policy-text">
+                                &copy; 2024 All rights reserved | The site has been created <a href="#">Company</a>
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ===========================
+        --- About Page. *** FOOTER *** End ---
+        ================================ -->
+
+    </div>
+
+    
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> <!--Swiper.js-->
+    <script src="./assets/js/bootstrap.js"></script> <!-- bootstrap.js 5.2.3 Js -->
+    <script src="./assets/js/main.js"></script>
+
+</body>
+</html>

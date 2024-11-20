@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal assistance</title>
+
+
+    <!-- Bootstrap 5 Css -->
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- Drop the styles -->
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <!-- Connect fonts -->
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <!-- The main style file -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- Спливаюче повідомлення -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            Successfully sent
+        </div>
+
+        <!-- Modal window "Enrollment for Consultation". Start-->
+        <div class="modal" id="consultationModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Sign up for a consultation</h2>
+                <p>Please fill out the form below to book a consultation</p>
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="name">Name: <span class="required-modal">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone: <span class="required-modal">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">The scope of the question:</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">Choose which consultation you are interested in</option>
+                            <option value="criminallaw">Criminal law</option>
+                            <option value="administrativelaw">Administrative law</option>
+                            <option value="autolawyer">Automotive lawyer (Road accident lawyer)</option>
+                            <option value="medicallaw">Medical law</option>
+                            <option value="compensation">Damage compensation</option>
+                            <option value="other">Other...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback">Brief content of the question:</label>
+                        <textarea id="feedback" name="feedback" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send</button>
+                </form>
+            </div>
+        </div>
+        <!-- Modal window "Enrollment for Consultation". End-->
+
+
+        <!-- Modal window for reviews. Start -->
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Leave a review</h2>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Name: <span class="required-modal">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telephone: <span class="required-modal">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rating">Rating:</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">Select a grade</option>
+                            <option value="super">Super</option>
+                            <option value="good">Normally, at your own expense</option>
+                            <option value="bad">Badly</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback">The text of the review: <span class="required-modal">*</span></label>
+                        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Leave a review</button>
+                </form>
+            </div>
+        </div>
+        <!-- Modal window for reviews. End -->
+
+        <!-- =====================
+        --- HEADER. Start ---
+        ===================== -->
+        <header class="header-style">
+            <div class="container">
+                <div class="col-12">
+                    <div class="site-row">
+                        <a href="./index.html" class="header-logo">
+                            <img src="./assets/images/logo/logo.svg" alt="logo">
+                        </a>
+                        <nav class="header_menu">
+                            <ul class="nav-menu">
+                                <li><a href="./page-about.html">About me</a></li>
+                                <li><a href="./page-services.html">Services</a></li>
+                                <li><a href="./page-blog.html">News and cases</a></li>
+                                <li><a href="./page-contacts.html">Contacts</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header_phone">
+                            <a href="tel:+380661111111">
+                                <img src="./assets/images/icon/icon_phone.svg" alt="phone">
+                            </a>
+                        </div>
+                        <div class="burger-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- =====================
+        --- HEADER. End ---
+        ===================== -->
+
+
+        <main class="main">
+            <!-- =====================
+            --- Main-banner. Start ---
+            ===================== -->
+            <section class="hero-home">
+
+                <div class="container">
+                    <div class="col-12">
+
+                        <div class="hero-banner-content_wrapper">
+                            <div class="hero-home_title">
+                                <h1>TO JUSTIFY, IT IS DIFFICULT, TO PROVE</h1>
+                            </div>
+                            <div class="hero-home_text">
+                                <h2>
+                                    YOUR RELIABLE ATTORNEY
+                                </h2>
+                            </div>
+                            <div class="hero-home_btn_wrapper">
+                                <a href="#" class="hero-home_btn_link open-modal">
+                                    <div class="hero-home_btn_text">
+                                        Order a consultation
+                                    </div>
+                                    <img src="./assets/images/img/button-outline.svg" alt="button" class="hero-home_btn_img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-img-top">
+                    <img src="./assets/images/img/event-img-1.webp" alt="">
+                </div>
+            </section>
+            <!-- =====================
+            --- Main-banner. End ---
+            ===================== -->
+
+            <!-- =====================
+            --- Home-Page. Block 2 "About me". Start ---
+            ===================== -->
+            <section class="section-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-12">
+                            <!-- The content of the left column -->
+                            <div class="about-content-wrapper">
+                                <div class="about-content-wrapper-content">
+                                    <div class="about-content-title">
+                                        <h2>My name is <span class="about-highlighted-text">Volodymyr,</span> 
+                                            I have been conducting a successful legal practice in Ukraine for many years.
+                                        </h2>
+                                    </div>
+                                    <div class="about-content-descr">
+                                        <p>During this time, he helped hundreds of people to save their freedom and money</p>
+                                    </div>
+                                </div>
+                                <div class="hero-home_btn_wrapper">
+                                    <a href="./page-about.html" class="hero-home_btn_link">
+                                        <div class="hero-home_btn_text">
+                                            Biography
+                                        </div>
+                                        <img src="./assets/images/img/button-outline.svg" alt="button" class="hero-home_btn_img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <!-- The content of the right column -->
+                            <div class="about-img">
+                                <img src="./assets/images/img/about-img.webp" alt="about-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-img-bottom">
+                <img src="./assets/images/img/event-img-2.webp" alt="">
+            </section>
+            <!-- =====================
+            --- Home-Page. Block 2 "About me". End ---
+            ===================== -->
+
+
+            <!-- =====================
+            --- Home-Page. Block 3 "Services" Start ---
+            ===================== -->
+            <section class="section-services">
+                <div class="container">
+                    <div class="row">
+                        <div class="block-title_wrapper">
+                            <h2 class="block-title">Legal support</h2>
+                            <span class="block-subtitle">Services</span>
+                        </div>
+                        
+                        <div class="services-content-wrapper">
+                            <ul>
+                                <li><a href="./single-services.html">Criminal Law and Procedure</a></li>
+                                <li><a href="./single-services.html">Administrative law and process</a></li>
+                                <li><a href="./single-services.html">Automotive Lawyer (Road Accident Lawyer)</a></li>
+                                <li><a href="./single-services.html">Medical law and process</a></li>
+                                <li><a href="./single-services.html">Damage compensation</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="hero-home_btn_wrapper ">
+                            <a href="#" class="hero-home_btn_link open-modal">
+                                <div class="hero-home_btn_text">
+                                    Sign up for a consultation
+                                </div>
+                                <img src="./assets/images/img/button-outline.svg" alt="button" class="hero-home_btn_img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- =====================
+            --- Home-Page. Block 3 "Services" End ---
+            ===================== -->
+
+
+            <!-- =====================
+            ---  Home-Page. Block 4 "Feedback". Start ---
+            ===================== -->
+            <section class="section-reviews">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-5 col-12">
+                            <div class="reviews-content-wrapper-left">
+                                <div class="block-title">
+                                    <h2>Reviews</h2>
+                                </div>
+                                <div class="block-descr">
+                                    <p>
+                                        As a lawyer, I always strive to provide the highest level of professional assistance to my clients. Your feedback is not only a source of inspiration for me, but also an important tool for improving my services. Each review reflects the real stories of people I have helped with their legal issues. I am extremely pleased to receive your feedback, because it shows the trust you place in me and the results we have achieved together.
+                                    </p>
+                                </div>
+
+                                <div class="hero-home_btn_wrapper">
+                                    <a href="#" class="hero-home_btn_link open-feedback-modal">
+                                        <div class="hero-home_btn_text">
+                                            Leave a review
+                                        </div>
+                                        <img src="./assets/images/img/button-outline.svg" alt="button" class="hero-home_btn_img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-12">
+                            <div class="swiper-review-wrapper">
+                                <div class="swiper-review">
+                                    
+                                    <div class="swiper mySwiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="swiper-slide-content-wrapper">
+                                                    <div class="swiper-review-date">
+                                                        <p>06.08.2024</p>
+                                                    </div>
+                                                    <div class="swiper-review-name">
+                                                        <h3>Alex W.</h3>
+                                                    </div>
+                                                    <div class="swiper-review-rating">
+                                                        <p>Super</p>
+                                                    </div>
+                                                    <div class="swiper-review-txt">
+                                                        <p>
+                                                            Satisfied with the cooperation. I recommend!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <div class="swiper-slide-content-wrapper">
+                                                    <div class="swiper-review-date">
+                                                        <p>06.08.2024</p>
+                                                    </div>
+                                                    <div class="swiper-review-name">
+                                                        <h3>Mary G</h3>
+                                                    </div>
+                                                    <div class="swiper-review-rating">
+                                                        <p>Okay</p>
+                                                    </div>
+                                                    <div class="swiper-review-txt">
+                                                        <p>
+                                                            The case was quickly closed in court. I recommend! 
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <div class="swiper-slide-content-wrapper">
+                                                    <div class="swiper-review-date">
+                                                        <p>06.08.2024</p>
+                                                    </div>
+                                                    <div class="swiper-review-name">
+                                                        <h3>Max T.</h3>
+                                                    </div>
+                                                    <div class="swiper-review-rating">
+                                                        <p>Super</p>
+                                                    </div>
+                                                    <div class="swiper-review-txt">
+                                                        <p>
+                                                            Satisfied with the lawyer's professionalism
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <div class="swiper-slide-content-wrapper">
+                                                    <div class="swiper-review-date">
+                                                        <p>06.08.2024</p>
+                                                    </div>
+                                                    <div class="swiper-review-name">
+                                                        <h3>Alexandr T</h3>
+                                                    </div>
+                                                    <div class="swiper-review-rating">
+                                                        <p>Super</p>
+                                                    </div>
+                                                    <div class="swiper-review-txt">
+                                                        <p>
+                                                            A professional who quickly learned the case and just as quickly won it. Thank you!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- =====================
+            --- Home-Page. Block 4 "Feedback". End ---
+            ===================== -->
+
+
+
+            <!-- =====================
+            --- Home-Page. Block 5 "Questions and answers" Start ---
+            ===================== -->
+            <section class="section-img-top">
+                <img src="./assets/images/img/event-img-1.webp" alt="">
+            </section>
+
+            <section class="section-faq">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="block-title_wrapper">
+                                <h2 class="block-title">Questions and answers</h2>
+                                <span class="block-subtitle">FAQ</span>
+                            </div>
+
+                            <div class="accordion-questions_answers-wrapper col-md-10 col-12">
+                                
+                                <!-- The first accordion -->
+                                <div class="accordion-questions_answers ">
+                                    <div class="accordion-header-questions_answers">
+                                        <p class="accordion-title-questions_answers">How is the agreement with the lawyer executed?</p>
+                                        <img src="./assets/images/icon/icon_accordeon_fingerprint.svg" alt="arrow icon" class="accordion-icon-single">
+                                    </div>
+                                    <div class="accordion-content-questions_answers">
+                                        <p class="product-description">
+                                            After signing the contract with me, and the relevant materials will be handed over, priority actions can be taken on the first day and all the necessary legal steps can be started. We are planning, systematically and effectively moving towards achieving the goal discussed with the "Client", while I spend the minimum amount of time to complete the work as soon as possible and achieve a positive result. All actions on my part are constantly coordinated with the "Client" or brought to his attention.
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+
+                                <!-- Long accordion -->
+                                <div class="accordion-questions_answers ">
+                                    <div class="accordion-header-questions_answers">
+                                        <p class="accordion-title-questions_answers">Is it safe to give a lawyer confidential information or information that contains client confidentiality?</p>
+                                        <img src="./assets/images/icon/icon_accordeon_fingerprint.svg" alt="arrow icon" class="accordion-icon-single">
+                                    </div>
+                                    <div class="accordion-content-questions_answers">
+                                        <p class="product-description">
+                                            After signing the contract with me, and the relevant materials will be handed over, priority actions can be taken on the first day and all the necessary legal steps can be started. We are planning, systematically and effectively moving towards achieving the goal discussed with the "Client", while I spend the minimum amount of time to complete the work as soon as possible and achieve a positive result. All actions on my part are constantly coordinated with the "Client" or brought to his attention.
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+
+                                <!-- The third accordion -->
+                                <div class="accordion-questions_answers ">
+                                    <div class="accordion-header-questions_answers">
+                                        <p class="accordion-title-questions_answers">How is the agreement with the lawyer executed?</p>
+                                        <img src="./assets/images/icon/icon_accordeon_fingerprint.svg" alt="arrow icon" class="accordion-icon-single">
+                                    </div>
+                                    <div class="accordion-content-questions_answers">
+                                        <p class="product-description">
+                                            After signing the contract with me, and the relevant materials will be handed over, priority actions can be taken on the first day and all the necessary legal steps can be started. We are planning, systematically and effectively moving towards achieving the goal discussed with the "Client", while I spend the minimum amount of time to complete the work as soon as possible and achieve a positive result. All actions on my part are constantly coordinated with the "Client" or brought to his attention.
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+
+                                <!-- The fourth accordion -->
+                                <div class="accordion-questions_answers ">
+                                    <div class="accordion-header-questions_answers">
+                                        <p class="accordion-title-questions_answers">How is the agreement with the lawyer fulfilled?</p>
+                                        <img src="./assets/images/icon/icon_accordeon_fingerprint.svg" alt="arrow icon" class="accordion-icon-single">
+                                    </div>
+                                    <div class="accordion-content-questions_answers">
+                                        <p class="product-description">
+                                            After signing the contract with me, and the relevant materials will be handed over, priority actions can be taken on the first day and all the necessary legal steps can be started. We are planning, systematically and effectively moving towards achieving the goal discussed with the "Client", while I spend the minimum amount of time to complete the work as soon as possible and achieve a positive result. All actions on my part are constantly coordinated with the "Client" or brought to his attention.
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+
+                                <!-- The fifth accordion -->
+                                <div class="accordion-questions_answers ">
+                                    <div class="accordion-header-questions_answers">
+                                        <p class="accordion-title-questions_answers">How is the agreement with the lawyer fulfilled?</p>
+                                        <img src="./assets/images/icon/icon_accordeon_fingerprint.svg" alt="arrow icon" class="accordion-icon-single">
+                                    </div>
+                                    <div class="accordion-content-questions_answers">
+                                        <p class="product-description">
+                                            After signing the contract with me, and the relevant materials will be handed over, priority actions can be taken on the first day and all the necessary legal steps can be started. We are planning, systematically and effectively moving towards achieving the goal discussed with the "Client", while I spend the minimum amount of time to complete the work as soon as possible and achieve a positive result. All actions on my part are constantly coordinated with the "Client" or brought to his attention.
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+
+                                <!-- Sixth accordion -->
+                                <div class="accordion-questions_answers ">
+                                    <div class="accordion-header-questions_answers">
+                                        <p class="accordion-title-questions_answers">How is the agreement with the lawyer fulfilled?</p>
+                                        <img src="./assets/images/icon/icon_accordeon_fingerprint.svg" alt="arrow icon" class="accordion-icon-single">
+                                    </div>
+                                    <div class="accordion-content-questions_answers">
+                                        <p class="product-description">
+                                            After signing the contract with me, and the relevant materials will be handed over, priority actions can be taken on the first day and all the necessary legal steps can be started. We are planning, systematically and effectively moving towards achieving the goal discussed with the "Client", while I spend the minimum amount of time to complete the work as soon as possible and achieve a positive result. All actions on my part are constantly coordinated with the "Client" or brought to his attention.
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+
+                                <!-- Seventh accordion -->
+                                <div class="accordion-questions_answers ">
+                                    <div class="accordion-header-questions_answers">
+                                        <p class="accordion-title-questions_answers">How is the agreement with the lawyer fulfilled?</p>
+                                        <img src="./assets/images/icon/icon_accordeon_fingerprint.svg" alt="arrow icon" class="accordion-icon-single">
+                                    </div>
+                                    <div class="accordion-content-questions_answers">
+                                        <p class="product-description">
+                                            After signing the contract with me, and the relevant materials will be handed over, priority actions can be taken on the first day and all the necessary legal steps can be started. We are planning, systematically and effectively moving towards achieving the goal discussed with the "Client", while I spend the minimum amount of time to complete the work as soon as possible and achieve a positive result. All actions on my part are constantly coordinated with the "Client" or brought to his attention.
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-img-bottom">
+                <img src="./assets/images/img/event-img-2.webp" alt="">
+            </section>
+            <!-- =====================
+            --- Home-Page. Block 5 "Questions and answers" End ---
+            ===================== -->
+
+
+
+            <!-- =====================
+            --- Home-Page. Block 6 "Blog" Start ---
+            ===================== -->
+            <section class="section-blog">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="block-title">
+                                <h2>Blog</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-blog-img">
+                    <img src="./assets/images/img/ribbon-3.webp" alt="Стрічка" class="ribbon-3">
+                </div>
+                <div class="container">
+                    <div class="row">
+
+                        <!-- General container for cards -->
+                        <div class="product-cards-wrapper">
+
+                            <!-- Blog card 1 -->
+                            <div class="product-card-wrapper col-12 col-sm-6 col-md-4">
+                                <div class="product-card">
+                                    <a href="./single-blog.html">
+                                        <img src="./assets/images/img/blog-cart.webp" alt="Product Image" class="product-card-img">
+                                    </a>
+                                    <div class="product-card-content">
+                                        <div class="product-card-meta">
+                                            <span class="product-card-date">05.08.2024</span>
+                                            <span class="product-card-category">Commercial law</span>
+                                        </div>
+                                        <a href="./single-blog.html" class="product-card-title_link">
+                                            <h3 class="product-card-title">
+                                                The new defense procurement system informs the public about product prices
+                                            </h3>
+                                        </a>
+                                        
+                                        <a href="./single-blog.html" class="product-card-description_link">
+                                            <p class="product-card-description">
+                                                Amendments to the law on defense procurement have already entered into force. From April 24, customers in the field of defense began to publish information about prices and the subject of procurement. [...]
+                                            </p>
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Blog card 2 -->
+                            <div class="product-card-wrapper col-12 col-sm-6 col-md-4">
+                                <div class="product-card">
+                                    <a href="./single-blog.html">
+                                        <img src="./assets/images/img/blog-cart_3.webp" alt="Product Image" class="product-card-img">
+                                    </a>
+                                    <div class="product-card-content">
+                                        <div class="product-card-meta">
+                                            <span class="product-card-date">05.08.2024</span>
+                                            <span class="product-card-category">Commercial law</span>
+                                        </div>
+                                        <a href="./single-blog.html" class="product-card-title_link">
+                                            <h3 class="product-card-title">
+                                                The new defense procurement system informs the public about product prices
+                                            </h3>
+                                        </a>
+                                        
+                                        <a href="./single-blog.html" class="product-card-description_link">
+                                            <p class="product-card-description">
+                                                Amendments to the law on defense procurement have already entered into force. From April 24, customers in the field of defense began to publish information about prices and the subject of procurement. [...]
+                                            </p>
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Blog card 3 -->
+                            <div class="product-card-wrapper col-12 col-sm-6 col-md-4">
+                                <div class="product-card">
+                                    <a href="./single-blog.html">
+                                        <img src="./assets/images/img/blog-cart.webp" alt="Product Image" class="product-card-img">
+                                    </a>
+                                    <div class="product-card-content">
+                                        <div class="product-card-meta">
+                                            <span class="product-card-date">05.08.2024</span>
+                                            <span class="product-card-category">Commercial law</span>
+                                        </div>
+                                        <a href="./single-blog.html" class="product-card-title_link">
+                                            <h3 class="product-card-title">
+                                                The new defense procurement system informs the public about product prices
+                                            </h3>
+                                        </a>
+                                        
+                                        <a href="./single-blog.html" class="product-card-description_link">
+                                            <p class="product-card-description">
+                                                Amendments to the law on defense procurement have already entered into force. From April 24, customers in the field of defense began to publish information about prices and the subject of procurement. [...]
+                                            </p>
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>  
+
+                        </div>
+                        <div class="hero-home_btn_wrapper">
+                            <a href="./page-blog.html" class="hero-home_btn_link">
+                                <div class="hero-home_btn_text">
+                                    All news
+                                </div>
+                                <img src="./assets/images/img/button-outline.svg" alt="button" class="hero-home_btn_img">
+                            </a>
+                        </div>    
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- =====================
+            --- Home-Page. Block 6 "Blog" End ---
+            ===================== -->
+        </main>
+        
+
+        <!-- ===========================
+        --- Home-Page. *** FOOTER *** Start ---
+        ================================ -->
+
+        <footer class="section-footer">
+            <div class="container">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="footer-content-wrapper">
+                            <div class="footer-logo-wrapper">
+                                <a href="#" class="footer-logo-link">
+                                    <img src="./assets/images/logo/logo.svg" alt="logo">
+                                </a>
+                                <p class="footer-txt">
+                                    We invite you to a free consultation with a lawyer if you or your company are facing legal challenges. Contact us today to receive professional assistance.
+                                </p>
+                                
+                            </div>
+
+                            <div class="footer-menu-wrapper">
+                                <p class="footer-page-name">Quick Links</p>
+
+                                <nav class="footer-menu">
+                                    <ul class="nav-menu">
+                                        <li><a href="./page-about.html">About me</a></li>
+                                        <li><a href="./page-services.html">Services</a></li>
+                                        <li><a href="./page-blog.html">News and cases</a></li>
+                                        <li><a href="./page-contacts.html">Contacts</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            
+
+                            <div class="footer-contacts-wrapper">
+                                <p class="footer-contacts-name">Contact Info</p>
+
+                                <p class="footer-contact-adress">
+                                    LLC "Law Firm", 22 Khreshchatyk St, Kyiv, 01001, Ukraine.
+                                </p>
+                                <a class="footer-mail-adr" href="mailto:mail@example.com">mail@example.com</a>
+                                <a class="footer-phone-number" href="tel:+380661111111">+38(066)111-11-11</a>
+
+                                <div class="footer-schedule">
+                                    <p class="footer-schedule-title">Working Hours:</p>
+                                    <p>Mon - Thu: 9:30 AM - 6:00 PM</p>
+                                    <p>Fri: 9:30 AM - 5:00 PM</p>
+                                    <p>Saturday: 10:00 AM - 2:00 PM</p>
+                                    <p>Sunday: Closed</p>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+                        <div class="footer-policy-content">
+                            <p class="footer-policy-text">
+                                &copy; 2024 All rights reserved | The site has been created <a href="#">Company</a>
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- ===========================
+        --- Home-Page. *** FOOTER *** End ---
+        ================================ -->
+
+    </div>
+
+    
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> <!--Swiper.js-->
+    <script src="./assets/js/bootstrap.js"></script> <!-- bootstrap.js 5.2.3 Js -->
+    <script src="./assets/js/main.js"></script>
+
+</body>
+</html>
